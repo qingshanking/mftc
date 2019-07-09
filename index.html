@@ -142,7 +142,8 @@
 							image_form.append('file', value);
 							console.log(image_form);
 							$.ajax({
-								url: 'https://api.yum6.cn/sinaimg.php?type=multipart',
+								//url: 'https://api.yum6.cn/sinaimg.php?type=multipart',
+								url:'https://img.yyhy.me/upload.php?type=Sina',
 								type: 'POST',
 								data: image_form,
 								mimeType: 'multipart/form-data',
