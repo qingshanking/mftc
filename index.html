@@ -139,7 +139,7 @@
 						$(files).each(function(key, value) {
 							$('#button')[0].innerHTML = '上传中';
 							image_form = new FormData();
-							image_form.append('file', value);
+							image_form.append('fileupload', value);
 							console.log(image_form);
 							$.ajax({
 								//url: 'https://api.yum6.cn/sinaimg.php?type=multipart',
@@ -152,36 +152,45 @@
 								processData: false,
 								dataType: 'json',
 								success: function(data) {
-									if(data.code == '200') {
+								    console.info(data);
+									if(data.code == '0') {
 										flag++;
-										if(typeof data.pid != 'null') {
-											$("#img").show();
-											$("#fuzhi").show();
-											$("#code").show();
-											$("#footer_code").html('<img src="https://xltc.bcrjl.com/large/' + data['pid'] + '.jpg" width="' + data['width'] + 'px" height="' + data['height'] + 'px">');
-											$("#texts").html('<input type="text" id="url" class="psdp-pwd" value="https://xltc.bcrjl.com/large/' + data['pid'] + '.jpg">');
-											$("#background").attr('xlink:href', 'https://xltc.bcrjl.com/large/' + data['pid'] + '.jpg');
-											$width = $(window).width();
-											if($width < 720) {
-												$("#psdp-wrap").attr('style', 'background:url(https://xltc.bcrjl.com/large/' + data['pid'] + '.jpg) center 90px no-repeat;background-size:90% 200px;');
-											} else if($width > 720) {
-												$("#psdp-wrap").attr('style', 'background:url(https://xltc.bcrjl.com/large/' + data['pid'] + '.jpg) center 90px no-repeat;background-size:60% 240px;');
-											}
-											$("#img_width").val(data['width'] + 'px');
-											$("#img_height").val(data['height'] + 'px');
-										}
-										if(flag == $("input[type='file']")[0].files.length) {
-											if(typeof data.pid != 'null') {
-												$('#button')[0].innerHTML = '上传成功';
-												setTimeout(function() {
-														$('#button')[0].innerHTML = '重新上传';
-													},
-													2000);
-											} else {
-												$('#button')[0].innerHTML = '上传失败';
-												alert('上传出错！');
-											}
-										}
+										$("#img").show();
+										$("#fuzhi").show();
+										$("#code").show();
+										$("#footer_code").html('<img src="' + data.msg + '">');
+										$("#texts").html('<input type="text" id="url" class="psdp-pwd" value="' + data.msg + '">');
+										$("#background").attr('xlink:href', data.msg);
+										
+										
+										//if(typeof data.pid != 'null') {
+										//	$("#img").show();
+										//	$("#fuzhi").show();
+										//	$("#code").show();
+										//	$("#footer_code").html('<img src="https://xltc.bcrjl.com/large/' + data['pid'] + '.jpg" width="' + data['width'] + 'px" height="' + data['height'] + 'px">');
+										//	$("#texts").html('<input type="text" id="url" class="psdp-pwd" value="https://xltc.bcrjl.com/large/' + data['pid'] + '.jpg">');
+										//	$("#background").attr('xlink:href', 'https://xltc.bcrjl.com/large/' + data['pid'] + '.jpg');
+										//	$width = $(window).width();
+										//	if($width < 720) {
+										//		$("#psdp-wrap").attr('style', 'background:url(https://xltc.bcrjl.com/large/' + data['pid'] + '.jpg) center 90px no-repeat;background-size:90% 200px;');
+										//	} else if($width > 720) {
+										//		$("#psdp-wrap").attr('style', 'background:url(https://xltc.bcrjl.com/large/' + data['pid'] + '.jpg) center 90px no-repeat;background-size:60% 240px;');
+										//	}
+										//	$("#img_width").val(data['width'] + 'px');
+										//	$("#img_height").val(data['height'] + 'px');
+										//}
+										//if(flag == $("input[type='file']")[0].files.length) {
+										//	if(typeof data.pid != 'null') {
+										//		$('#button')[0].innerHTML = '上传成功';
+										//		setTimeout(function() {
+										//				$('#button')[0].innerHTML = '重新上传';
+										//			},
+										//			2000);
+										//	} else {
+										//		$('#button')[0].innerHTML = '上传失败';
+										//		alert('上传出错！');
+										//	}
+										//}
 									} else {
 										alert(data.msg);
 										$('#button')[0].innerHTML = '上传失败';
