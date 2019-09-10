@@ -11,12 +11,32 @@ html {
 }
 
 body {
-	background: url(https://tva3.sinaimg.cn/large/005BYqpgly1g04ve10l8xj31hc0u047x.jpg) no-repeat 0 0px;
-	background-attachment: fixed;
-	background-size: 100% 100%;
-	background-color: #313946
+    /*background: url(https://tva3.sinaimg.cn/large/005BYqpgly1g04ve10l8xj31hc0u047x.jpg) no-repeat 0 0px;*/
+    background: url('https://api.uomg.com/api/rand.img1?sort=美女') no-repeat 0 0px;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    background-color: #313946
 }
-
+@media screen and (max-width: 600px) {
+    body {
+        background-image: url('https://api.uomg.com/api/rand.img2?sort=二次元');
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* min-width: 1000px; */
+        z-index: -10;
+        zoom: 1;
+        background-color: #fff;
+        background-repeat: no-repeat;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -o-background-size: cover;
+        background-position: center 0;
+        opacity: 0.5;
+    }
+}
 .cfb {
 	clear: both
 }
@@ -118,13 +138,14 @@ body {
 }
 
 @media(max-width:319px) {
-	#psdp-wrap {
-		width: 100%;
-		position: relative;
-		height: 100%;
-		background: url(https://tool.bcrjl.com/mftc/img/6fdfc537dba0ac0fbbf32f8561476b70.png) center 90px no-repeat;
-		background-size: 100% auto
-	}
+    #psdp-wrap {
+        width: 100%;
+        position: relative;
+        height: 100%;
+        /*background: url('https://api.uomg.com/api/rand.img2?sort=美女') center 90px no-repeat;*/
+        /*background: url(https://tool.bcrjl.com/mftc/img/6fdfc537dba0ac0fbbf32f8561476b70.png) center 90px no-repeat;*/
+        background-size: 100% auto
+    }
 	.psdp-cont {
 		padding-top: 430px
 	}
@@ -190,14 +211,14 @@ body {
 }
 
 @media(min-width:320px) and (max-width:479px) {
-	#psdp-wrap {
-		width: 100%;
-		position: relative;
-		margin: 0 auto;
-		height: 100%;
-		background: url(https://tool.bcrjl.com/mftc/img/6fdfc537dba0ac0fbbf32f8561476b70.png) center 90px no-repeat;
-		background-size: 320px auto
-	}
+    #psdp-wrap {
+        width: 100%;
+        position: relative;
+        margin: 0 auto;
+        height: 100%;
+        /*background: url(https://api.uomg.com/api/rand.avatar) center 90px no-repeat;*/
+        background-size: 320px auto
+    }
 	.psdp-cont {
 		padding-top: 320px
 	}
@@ -268,14 +289,14 @@ body {
 }
 
 @media(min-width:480px) and (max-width:767px) {
-	#psdp-wrap {
-		width: 400px;
-		position: relative;
-		margin: 0 auto;
-		height: 100%;
-		background: url(https://tool.bcrjl.com/mftc/img/6fdfc537dba0ac0fbbf32f8561476b70.png) center 90px no-repeat;
-		background-size: 400px auto
-	}
+    #psdp-wrap {
+        width: 400px;
+        position: relative;
+        margin: 0 auto;
+        height: 100%;
+        /*background: url(https://api.uomg.com/api/rand.avatar) center 90px no-repeat;*/
+        background-size: 400px auto
+    }
 	.psdp-cont {
 		padding-top: 340px
 	}
@@ -338,15 +359,15 @@ body {
 }
 
 @media(min-width:768px) {
-	#psdp-wrap {
-		width: 660px;
-		position: relative;
-		right: 0;
-		margin: 0 auto;
-		height: 100%;
-		background: url(https://tool.bcrjl.com/mftc/img/6fdfc537dba0ac0fbbf32f8561476b70.png) center 90px no-repeat;
-		background-size: 400px auto
-	}
+    #psdp-wrap {
+        width: 660px;
+        position: relative;
+        right: 0;
+        margin: 0 auto;
+        height: 100%;
+        /*background: url(https://api.uomg.com/api/rand.avatar) center 90px no-repeat;*/
+        background-size: 400px auto
+    }
 	.psdp-cont {
 		padding-top: 430px
 	}
